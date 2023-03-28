@@ -1,14 +1,19 @@
 # escape=` (backtick)
 
 FROM postgres:14.7
-RUN apt-get install python3.10.4; `
-    virtualenv venv `
-    source venv/bin/activate `
-    pip install -r requirements.txt; `
-    sudo apt install postgresql postgresql-contrib; `
-    sudo su - postgres; `       
-    service postgresql start; `
-    exit;
+RUN apt-get update
+RUN apt-get install -y python3.10
+RUN apt-get install -y wget
+RUN apt-get install -y man
+RUN apt-get install -y docker
+RUN apt-get install -y pip
+RUN apt-get install -y git
+RUN apt-get install -y postgresql postgresql-contrib
+RUN apt-get install -y libpq-dev
+RUN pg_createcluster 15 main
+RUN service postgresql start
+
+ENTRYPOINT [./startup.sh]
 
 
 
