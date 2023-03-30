@@ -1,6 +1,5 @@
-# escape=` (backtick)
+FROM postgres:14.7
 
-FROM debian:11.6-slim
 RUN apt-get update
 RUN apt-get install -y python3.10
 RUN apt-get install -y wget
