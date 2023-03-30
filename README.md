@@ -66,7 +66,7 @@ Create a new file named `.env` by duplicating `.env.example`. Update the new fil
 
 ```
 # .env file
-DATABASE_URL="[INSERT_DATABASE_URL]"
+DATABASE_URL="username:password@hostname:port/database_name"
 GITHUB_CLIENT_ID="[INSERT_CLIENT_ID]"
 GITHUB_CLIENT_SECRET="[INSERT_CLIENT_SECRET]"
 ```
